@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversation View - Macintosh Chatbot</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="dashboard-styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="conversation-view-container">
+        <div class="conversation-header">
+            <div class="header-content">
+                <div class="bot-avatar">
+                    <div class="avatar-icon">◉</div>
+                </div>
+                <div class="header-info">
+                    <h1 id="conversationTitle">CONVERSATION VIEW</h1>
+                    <p id="conversationSubtitle">System 7.0 - Viewing conversation</p>
+                </div>
+                <div class="header-actions">
+                    <a href="/dashboard.html" class="nav-button">← Back to Dashboard</a>
+                    <a href="/" class="nav-button">New Chat</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="conversation-content">
+            <div class="conversation-messages" id="conversationMessages">
+                <div class="loading-message">
+                    <div class="loading-spinner"></div>
+                    <p>Loading conversation...</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="conversation-footer">
+            <div class="conversation-info">
+                <span id="messageCount">0 messages</span>
+                <span id="conversationDate">Loading...</span>
+            </div>
+        </div>
+    </div>
+    
+    <script src="conversation-view.js"></script>
+</body>
+</html>
