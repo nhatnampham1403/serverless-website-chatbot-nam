@@ -95,10 +95,21 @@ class Chatbot {
             console.error('Error sending message:', error);
             this.hideTypingIndicator();
             
-            // Show error message
+            // Show more detailed error message
+            let errorMessage = 'System Error: ';
+            if (error.message.includes('Failed to fetch')) {
+                errorMessage += 'Cannot connect to server. Please check your internet connection.';
+            } else if (error.message.includes('401')) {
+                errorMessage += 'Authentication failed. Please check API configuration.';
+            } else if (error.message.includes('500')) {
+                errorMessage += 'Server error. Please try again later.';
+            } else {
+                errorMessage += `${error.message}. Please check your connection and try again.`;
+            }
+            
             this.addMessage({
                 type: 'bot',
-                content: `System Error: ${error.message}. Please check your connection and try again.`
+                content: errorMessage
             });
         } finally {
             this.isProcessing = false;

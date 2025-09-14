@@ -5,7 +5,7 @@ A retro Macintosh-style chatbot interface with OpenAI integration, built with No
 ## Features
 
 - Classic Macintosh System 7.0 aesthetic
-- OpenAI GPT-3.5-turbo integration
+- OpenAI GPT-4o-mini integration
 - Real-time conversation with AI
 - Session-based conversation storage
 - Responsive design

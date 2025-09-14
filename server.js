@@ -194,7 +194,7 @@ app.post('/api/chat', async (req, res) => {
     
     // Call OpenAI API
     const completion = await openai.chat.completions.create({
-      model: "gpt-4.1-mini",
+      model: "gpt-4o-mini",
       messages: updatedMessages,
       max_tokens: 500,
       temperature: 0.7,
@@ -329,7 +329,7 @@ If the user provided contact details, set lead quality to "good"; otherwise, "sp
 
     // Call OpenAI API for lead analysis
     const completion = await openai.chat.completions.create({
-      model: "gpt-4.1-mini",
+      model: "gpt-4o-mini",
       messages: [
         { role: "system", content: systemPrompt },
         { role: "user", content: `Please analyze this conversation transcript:\n\n${transcript}` }
