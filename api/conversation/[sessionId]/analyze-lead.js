@@ -26,7 +26,8 @@ module.exports = async function handler(req, res) {
     return res.status(405).json({ error: 'Method not allowed' });
   }
 
-  const { sessionId } = req.query;
+  // Extract sessionId from the URL path
+  const sessionId = req.url.split('/').slice(-2, -1)[0];
 
   if (!sessionId) {
     return res.status(400).json({ error: 'Session ID is required' });

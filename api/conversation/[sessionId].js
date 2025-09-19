@@ -16,7 +16,8 @@ module.exports = async function handler(req, res) {
     return;
   }
 
-  const { sessionId } = req.query;
+  // Extract sessionId from the URL path
+  const sessionId = req.url.split('/').pop();
 
   if (!sessionId) {
     return res.status(400).json({ error: 'Session ID is required' });
